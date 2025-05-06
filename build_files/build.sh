@@ -2,23 +2,26 @@
 
 set -ouex pipefail
 
-### Install packages
+echo "::group:: ===== Manage Packages ====="
+/ctx/packages.sh
+echo "::endgroup::"
 
-# Packages can be installed from any enabled yum repo on the image.
-# RPMfusion repos are available by default in ublue main images
-# List of rpmfusion packages can be found here:
-# https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
+echo "::group:: ===== Run Scripts ====="
+/ctx/flatpak-librewolf.sh
+echo "::endgroup::"
 
-# this installs a package from fedora repos
-dnf5 install -y tmux 
+echo "::group:: ===== Install Themes ====="
+/ctx/icons.sh
+echo "::endgroup::"
 
-# Use a COPR Example:
-#
-# dnf5 -y copr enable ublue-os/staging
-# dnf5 -y install package
-# Disable COPRs so they don't end up enabled on the final image:
-# dnf5 -y copr disable ublue-os/staging
+echo "::group:: ===== Include Just Recipes ====="
+/ctx/just.sh
+echo "::endgroup::"
 
-#### Example for enabling a System Unit File
+echo "::group:: ===== Replace Image Info ====="
+/ctx/image-info.sh
+echo "::endgroup::"
 
-systemctl enable podman.socket
+echo "::group:: ===== Finalize ====="
+/ctx/finalize.sh
+echo "::endgroup::"
