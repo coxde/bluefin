@@ -21,7 +21,7 @@ EOF
 brew analytics off
 
 # Clean temp files
-# https://github.com/ublue-os/bazzite/blob/main/build_files/finalize
+# https://github.com/ublue-os/bluefin/blob/main/build_files/shared/build-dx.sh
 dnf5 clean all
 
 rm -rf /tmp/* || true
