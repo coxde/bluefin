@@ -4,7 +4,7 @@
 
 ## Purpose 🤔
 
-This repository is for my personal OS image, very much based on my own needs. It's based on [Bluefin (dx-stable-daily)](https://github.com/ublue-os/bluefin/) and a template published by the [Universal Blue](https://universal-blue.org/) Project.
+This repository is for my personal OS image, very much based on my own needs. It's based on [Bluefin (dx-latest)](https://github.com/ublue-os/bluefin/) and a template published by the [Universal Blue](https://universal-blue.org/) Project.
 
 ## Features ✨
 
@@ -20,10 +20,12 @@ This repository is for my personal OS image, very much based on my own needs. It
 To rebase an existing Bluefin installation to this build:
 
 -   Rebase to the latest image:
+
     ```
     sudo bootc switch ghcr.io/coxde/bluefin:latest --enforce-container-sigpolicy
     ```
-    - The `--enforce-container-sigpolicy` is important to ensure you're checking the signature of the produced image.
+
+    -   The `--enforce-container-sigpolicy` is important to ensure you're checking the signature of the produced image.
 
 -   Reboot to complete the rebase:
     ```

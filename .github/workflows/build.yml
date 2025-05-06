@@ -49,7 +49,7 @@ jobs:
               id: fetch
               shell: bash
               run: |
-                  skopeo inspect docker://ghcr.io/ublue-os/bluefin-dx:stable-daily > inspect.json
+                  skopeo inspect docker://ghcr.io/ublue-os/bluefin-dx:latest > inspect.json
 
                   image=$(jq -r '.["Labels"]["org.opencontainers.image.version"]' inspect.json)
                   if [ -z "$image" ] || [ "null" = "$image" ]; then
