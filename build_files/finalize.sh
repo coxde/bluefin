@@ -17,9 +17,6 @@ tee /etc/NetworkManager/conf.d/20-connectivity.conf <<EOF
 enabled=false
 EOF
 
-# Disable Homebrew telemetry
-brew analytics off
-
 # Clean temp files
 # https://github.com/ublue-os/bluefin/blob/main/build_files/shared/build-dx.sh
 dnf5 clean all
