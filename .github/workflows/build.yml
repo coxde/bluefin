@@ -57,7 +57,7 @@ jobs:
                       exit 1
                   fi
 
-                  fedora=$(echo "$image" | cut -f1 -d.)
+                  fedora=$(echo "$image" | awk -F '[-.]' '{print $2}')
                   if [ -z "$fedora" ] || [ "null" = "$fedora" ]; then
                       echo "Fedora version must not be empty or null"
                       exit 1
