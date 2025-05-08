@@ -1,4 +1,6 @@
 cafe.avery.Delfin
+com.github.finefindus.eyedropper
+com.github.marhkb.Pods
 com.github.PintaProject.Pinta
 com.github.tchx84.Flatseal
 com.mattjakeman.ExtensionManager
@@ -6,6 +8,7 @@ com.ranfdev.DistroShelf
 com.spotify.Client
 com.steamgriddb.SGDBoop
 de.capypara.FieldMonitor
+io.bassi.Amberol
 io.github.flattool.Ignition
 io.github.flattool.Warehouse
 io.github.getnf.embellish
@@ -13,11 +16,9 @@ io.github.giantpinkrobots.varia
 io.gitlab.adhami3310.Impression
 io.gitlab.librewolf-community
 io.missioncenter.MissionCenter
-io.podman_desktop.PodmanDesktop
 it.mijorus.gearlever
 md.obsidian.Obsidian
 me.iepure.devtoolbox
-org.fedoraproject.MediaWriter
 org.gnome.baobab
 org.gnome.Calculator
 org.gnome.Calendar
@@ -29,15 +30,13 @@ org.gnome.font-viewer
 org.gnome.Logs
 org.gnome.Loupe
 org.gnome.Maps
-org.gnome.NautilusPreviewer
 org.gnome.Papers
 org.gnome.Showtime
+org.gnome.SimpleScan
+org.gnome.Snapshot
 org.gnome.TextEditor
 org.gnome.Weather
 org.gnome.World.PikaBackup
 org.gtk.Gtk3theme.adw-gtk3
 org.gtk.Gtk3theme.adw-gtk3-dark
-org.keepassxc.KeePassXC
-org.onlyoffice.desktopeditors
 page.tesk.Refine
-sh.loft.devpod
