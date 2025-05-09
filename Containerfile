@@ -5,7 +5,8 @@ ARG BASE_IMAGE_DIGEST="${BASE_IMAGE_DIGEST}"
 
 # Stage 1: Build context
 FROM scratch AS ctx
-COPY build_files /
+COPY /build_files /build_files
+COPY /iso_files /iso_files
 
 # Stage 2: Base image
 FROM ghcr.io/ublue-os/bluefin-dx:stable${BASE_IMAGE_DIGEST:+@${BASE_IMAGE_DIGEST}} AS base
@@ -19,7 +20,7 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
     --mount=type=tmpfs,dst=/tmp \
-    /ctx/build.sh && \
+    /ctx/build_files/build.sh && \
     ostree container commit
 
 # Linting

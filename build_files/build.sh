@@ -3,25 +3,26 @@
 set -ouex pipefail
 
 echo "::group:: ===== Manage Packages ====="
-/ctx/packages.sh
+/ctx/build_files/packages.sh
+install -Dm0644 -t /etc/ublue-os/ /ctx/iso_files/*.list # ujust install-system-flatpaks
 echo "::endgroup::"
 
 echo "::group:: ===== Run Scripts ====="
-/ctx/flatpak-librewolf.sh
+/ctx/build_files/flatpak-librewolf.sh
 echo "::endgroup::"
 
 echo "::group:: ===== Install Themes ====="
-/ctx/icons.sh
+/ctx/build_files/icons.sh
 echo "::endgroup::"
 
 echo "::group:: ===== Include Just Recipes ====="
-/ctx/just.sh
+/ctx/build_files/just.sh
 echo "::endgroup::"
 
 echo "::group:: ===== Replace Image Info ====="
-/ctx/image-info.sh
+/ctx/build_files/image-info.sh
 echo "::endgroup::"
 
 echo "::group:: ===== Finalize ====="
-/ctx/finalize.sh
+/ctx/build_files/finalize.sh
 echo "::endgroup::"

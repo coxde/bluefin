@@ -4,7 +4,7 @@ set -ouex pipefail
 
 # Set variables
 IMPORT_FILE="/usr/share/ublue-os/just/60-custom.just"
-JUST_FILES_FOLDER="/ctx/just"
+JUST_FILES_FOLDER="/ctx/build_files/just"
 DEST_FOLDER="/usr/share/ublue-os/just/custom"
 
 # Find all justfiles
