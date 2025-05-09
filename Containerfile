@@ -8,7 +8,7 @@ FROM scratch AS ctx
 COPY build_files /
 
 # Stage 2: Base image
-FROM ghcr.io/ublue-os/bluefin-dx:latest${BASE_IMAGE_DIGEST:+@${BASE_IMAGE_DIGEST}} AS base
+FROM ghcr.io/ublue-os/bluefin-dx:stable${BASE_IMAGE_DIGEST:+@${BASE_IMAGE_DIGEST}} AS base
 
 # Use variables in this stage
 ARG IMAGE_NAME

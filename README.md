@@ -4,7 +4,7 @@
 
 ## Purpose 🤔
 
-This repository is for my personal OS image, very much based on my own needs. It's based on [Bluefin (dx-latest)](https://github.com/ublue-os/bluefin/) and a template published by the [Universal Blue](https://universal-blue.org/) Project.
+This repository is for my personal OS image, very much based on my own needs. It's based on [Bluefin (dx-stable)](https://github.com/ublue-os/bluefin/) and a template published by the [Universal Blue](https://universal-blue.org/) Project.
 
 ## Features ✨
 

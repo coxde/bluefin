@@ -49,7 +49,7 @@ jobs:
               id: fetch
               shell: bash
               run: |
-                  skopeo inspect docker://ghcr.io/ublue-os/bluefin-dx:latest > inspect.json
+                  skopeo inspect docker://ghcr.io/ublue-os/bluefin-dx:stable > inspect.json
 
                   image=$(jq -r '.["Labels"]["org.opencontainers.image.version"]' inspect.json)
                   if [ -z "$image" ] || [ "null" = "$image" ]; then
@@ -57,7 +57,7 @@ jobs:
                       exit 1
                   fi
 
-                  fedora=$(echo "$image" | awk -F '[-.]' '{print $2}')
+                  fedora=$(echo "$image" | cut -f1 -d.)
                   if [ -z "$fedora" ] || [ "null" = "$fedora" ]; then
                       echo "Fedora version must not be empty or null"
                       exit 1
