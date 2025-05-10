@@ -17,6 +17,11 @@ tee /etc/NetworkManager/conf.d/20-connectivity.conf <<EOF
 enabled=false
 EOF
 
+# Disable Tailscale telemetry
+>> /etc/default/tailscaled  <<EOF
+TS_NO_LOGS_NO_SUPPORT=true
+EOF
+
 # Clean temp files
 # https://github.com/ublue-os/bluefin/blob/main/build_files/shared/build-dx.sh
 dnf5 clean all
