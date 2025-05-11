@@ -18,20 +18,8 @@ install-yet-another-gaming-flatpaks ACTION="":
             app/com.usebottles.bottles/x86_64/stable \
             app/com.valvesoftware.Steam/x86_64/stable \
             runtime/com.obsproject.Studio.Plugin.OBSVkCapture/x86_64/stable \
-            runtime/com.valvesoftware.Steam.CompatibilityTool.Proton-GE/x86_64/stable \
+            runtime/com.valvesoftware.Steam.Utility.steamtinkerlaunch/x86_64/stable \
             runtime/org.freedesktop.Platform.VulkanLayer.gamescope/x86_64/24.08 \
             runtime/org.freedesktop.Platform.VulkanLayer.MangoHud/x86_64/24.08 \
             runtime/org.freedesktop.Platform.VulkanLayer.OBSVkCapture/x86_64/24.08
-        
-        flatpak override \
-            --system \
-            --env=MANGOHUD_CONFIG=preset=1+4 \
-            com.valvesoftware.Steam
-
-        flatpak override \
-            --system \
-            --env=MANGOHUD_CONFIG=preset=1+4 \
-            --filesystem=~/Applications/Games \
-            --filesystem=~/.var/app/com.valvesoftware.Steam \
-            com.usebottles.bottles
     fi
