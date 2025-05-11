@@ -1,0 +1,13 @@
+{
+    "chat.commandCenter.enabled": false,
+    "containers.containerClient": "com.microsoft.visualstudio.containers.podman",
+    "dev.containers.dockerComposePath": "podman-compose",
+    "dev.containers.dockerPath": "podman",
+    "dev.containers.dockerSocketPath": "%t/podman/podman.sock",
+    "editor.fontFamily": "'JetBrainsMono Nerd Font'",
+    "telemetry.feedback.enabled": false,
+    "telemetry.telemetryLevel": "off",
+    "update.mode": "none",
+    "workbench.enableExperiments": false,
+    "workbench.settings.enableNaturalLanguageSearch": false
+}

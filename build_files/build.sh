@@ -9,6 +9,7 @@ echo "::endgroup::"
 
 echo "::group:: ===== Run Scripts ====="
 /ctx/build_files/flatpak-librewolf.sh
+rsync -rvK /ctx/system_files/ /
 echo "::endgroup::"
 
 echo "::group:: ===== Install Themes ====="
