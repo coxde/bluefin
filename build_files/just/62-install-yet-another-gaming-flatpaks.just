@@ -6,8 +6,8 @@ install-yet-another-gaming-flatpaks ACTION="":
     OPTION={{ ACTION }}
 
     if [ "$OPTION" == "" ]; then
-      echo "${bold}Install gaming related flatpaks${normal}"
-      OPTION=$(Choose "Install")
+        echo "${bold}Install gaming related flatpaks${normal}"
+        OPTION=$(Choose "Install")
     fi
 
     if [[ "${OPTION,,}" =~ ^install ]]; then
@@ -17,6 +17,8 @@ install-yet-another-gaming-flatpaks ACTION="":
             app/com.github.Matoking.protontricks/x86_64/stable \
             app/com.usebottles.bottles/x86_64/stable \
             app/com.valvesoftware.Steam/x86_64/stable \
+            app/io.github.Foldex.AdwSteamGtk/x86_64/stable \
+            app/org.prismlauncher.PrismLauncher/x86_64/stable \
             runtime/com.obsproject.Studio.Plugin.OBSVkCapture/x86_64/stable \
             runtime/com.valvesoftware.Steam.Utility.steamtinkerlaunch/x86_64/stable \
             runtime/org.freedesktop.Platform.VulkanLayer.gamescope/x86_64/24.08 \
