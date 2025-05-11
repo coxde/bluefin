@@ -9,6 +9,9 @@ dnf5 -y install \
     syncthing
 
 # Install COPR packages
+dnf5 -y copr enable bazzite-org/webapp-manager
+dnf5 -y install webapp-manager
+dnf5 -y copr disable bazzite-org/webapp-manager
 
 # Install 3rd party packages
 
