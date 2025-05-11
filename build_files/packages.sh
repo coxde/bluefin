@@ -15,6 +15,6 @@ dnf5 -y install \
 # Remove packages
 dnf5 -y remove \
     docker-buildx-plugin \
-	docker-ce \
-	docker-ce-cli \
-	docker-compose-plugin
+    docker-ce \
+    docker-ce-cli \
+    docker-compose-plugin
