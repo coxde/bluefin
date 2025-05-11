@@ -8,8 +8,8 @@ This repository is for my personal OS image, very much based on my own needs. It
 
 ## Features ✨
 
--   Extra [packages](https://github.com/coxde/bluefin/blob/main/build_files/packages.sh)
--   More [Justfiles](https://github.com/coxde/bluefin/tree/main/build_files/just)
+-   Extra [packages](https://github.com/coxde/bluefin/blob/main/build_files/01-packages.sh)
+-   More [Justfiles](https://github.com/coxde/bluefin/tree/main/build_files/20-just.sh)
 -   More Icons
 -   LibreWolf tweaks
 
