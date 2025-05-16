@@ -14,7 +14,6 @@ echo "::endgroup::"
 
 echo "::group:: ===== Manage Configurations ====="
 /ctx/build_files/10-flatpak-librewolf.sh
-rsync -rvK /ctx/system_files/ /
 echo "::endgroup::"
 
 echo "::group:: ===== Include Justfiles ====="
