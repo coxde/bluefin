@@ -10,7 +10,7 @@ COPY /iso_files /iso_files
 COPY /system_files /system_files
 
 # Stage 2: Base image
-FROM ghcr.io/ublue-os/bluefin-dx:stable${BASE_IMAGE_DIGEST:+@${BASE_IMAGE_DIGEST}} AS base
+FROM ghcr.io/ublue-os/bluefin-dx:stable${BASE_IMAGE_DIGEST:+@${BASE_IMAGE_DIGEST}}
 
 # Use variables in this stage
 ARG IMAGE_NAME
