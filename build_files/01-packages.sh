@@ -17,6 +17,7 @@ dnf5 -y copr disable bazzite-org/webapp-manager
 
 # Remove packages
 dnf5 -y remove \
+    code \
     containerd.io \
     docker-buildx-plugin \
     docker-ce \

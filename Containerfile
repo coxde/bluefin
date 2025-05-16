@@ -7,7 +7,6 @@ ARG BASE_IMAGE_DIGEST="${BASE_IMAGE_DIGEST}"
 FROM scratch AS ctx
 COPY /build_files /build_files
 COPY /iso_files /iso_files
-COPY /system_files /system_files
 
 # Stage 2: Base image
 FROM ghcr.io/ublue-os/bluefin-dx:stable${BASE_IMAGE_DIGEST:+@${BASE_IMAGE_DIGEST}}

@@ -2,8 +2,9 @@
 
 set -ouex pipefail
 
-# Enable services
-systemctl enable podman.socket
+# Remove VS Code leftover
+rm -f /usr/share/ublue-os/user-setup.hooks.d/10-vscode.sh
+rm -rf /etc/skel/.config/Code/
 
 # Disable Fedora telemetry
 # https://docs.projectbluefin.io/analytics/#fedora
