@@ -18,8 +18,13 @@ tee /etc/NetworkManager/conf.d/20-connectivity.conf <<EOF
 enabled=false
 EOF
 
+# Disable Homebrew telemetry
+tee -a /etc/environment <<EOF
+HOMEBREW_NO_ANALYTICS=1
+EOF
+
 # Disable Tailscale telemetry
->> /etc/default/tailscaled  <<EOF
+tee -a /etc/default/tailscaled <<EOF
 TS_NO_LOGS_NO_SUPPORT=true
 EOF
 
