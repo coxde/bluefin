@@ -4,18 +4,18 @@ on:
         branches:
             - main
         paths:
-            - 'image-versions.yaml'
+            - "image-versions.yaml"
     pull_request:
         branches:
             - main
     workflow_dispatch:
 
 env:
-    IMAGE_NAME: '${{ github.event.repository.name }}'
-    IMAGE_DESC: 'My Customized Bluefin Image'
+    IMAGE_NAME: "${{ github.event.repository.name }}"
+    IMAGE_DESC: "My Customized Bluefin Image"
     IMAGE_VENDOR: ${{ github.repository_owner }}
-    IMAGE_REGISTRY: 'ghcr.io/${{ github.repository_owner }}'
-    DEFAULT_TAG: 'latest'
+    IMAGE_REGISTRY: "ghcr.io/${{ github.repository_owner }}"
+    DEFAULT_TAG: "latest"
 
 concurrency:
     group: ${{ github.workflow }}-${{ github.ref || github.run_id }}-${{ inputs.brand_name}}-${{ inputs.stream_name }}
@@ -85,7 +85,7 @@ jobs:
                       echo "version=${version}" >> $GITHUB_OUTPUT
                   else
                       latest=$(echo "$tags" | jq -r '.[-1]')
-                      
+
                       if [[ $latest == $version ]]; then
                           echo "version=${version}.1" >> $GITHUB_OUTPUT
                       else
@@ -131,8 +131,8 @@ jobs:
                       org.opencontainers.image.vendor=${{ github.repository_owner }}
                       org.opencontainers.image.version=${{ steps.generate_tags.outputs.version }}
                       containers.bootc=1
-                  sep-tags: ' '
-                  sep-annotations: ' '
+                  sep-tags: " "
+                  sep-annotations: " "
 
             # Generate a file with all the build-args passed to buildah
             - name: Prepare Build Args File
@@ -141,6 +141,7 @@ jobs:
                   cat <<'EOF' >>build_args.txt
                   IMAGE_NAME=${{ env.IMAGE_NAME }}
                   IMAGE_VENDOR=${{ env.IMAGE_VENDOR }}
+                  IMAGE_TAG=${{ env.DEFAULT_TAG }}
                   BASE_IMAGE_DIGEST=${{ steps.query_digest.outputs.BASE_IMAGE_DIGEST }}
                   EOF
 
@@ -164,9 +165,9 @@ jobs:
               uses: hhd-dev/rechunk@ca77507401f8700bb0b25ebecbbf980a078cd180 # v1.2.2
               if: github.event_name != 'pull_request' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
               with:
-                  rechunk: 'ghcr.io/hhd-dev/rechunk:v1.1.2'
-                  ref: 'raw-img'
-                  prev-ref: '${{ env.IMAGE_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.DEFAULT_TAG }}'
+                  rechunk: "ghcr.io/hhd-dev/rechunk:v1.1.2"
+                  ref: "raw-img"
+                  prev-ref: "${{ env.IMAGE_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.DEFAULT_TAG }}"
                   skip_compression: true
                   version: ${{ steps.generate_tags.outputs.version }}
                   labels: ${{ steps.metadata.outputs.labels }} # Rechunk strips out all the labels during build, this needs to be reapplied here with newline separator

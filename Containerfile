@@ -1,6 +1,7 @@
 # Global build variables
 ARG IMAGE_NAME="${IMAGE_NAME:-bluefin}"
 ARG IMAGE_VENDOR="${IMAGE_VENDOR:-coxde}"
+ARG IMAGE_TAG="${IMAGE_TAG:-latest}"
 ARG BASE_IMAGE_DIGEST="${BASE_IMAGE_DIGEST}"
 
 # Stage 1: Build context
@@ -14,6 +15,7 @@ FROM ghcr.io/ublue-os/bluefin-dx:stable${BASE_IMAGE_DIGEST:+@${BASE_IMAGE_DIGEST
 # Use variables in this stage
 ARG IMAGE_NAME
 ARG IMAGE_VENDOR
+ARG IMAGE_TAG
 
 # Build
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \

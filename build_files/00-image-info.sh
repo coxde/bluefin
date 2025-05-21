@@ -11,4 +11,5 @@ sed -i \
     -e 's|"image-name": ".*"|"image-name": "'"$IMAGE_NAME"'"|' \
     -e 's|"image-vendor": ".*"|"image-vendor": "'"$IMAGE_VENDOR"'"|' \
     -e 's|"image-ref": ".*"|"image-ref": "'"$IMAGE_REF"'"|' \
+    -e 's|"image-tag": ".*"|"image-tag": "'"$IMAGE_TAG"'"|' \
     "$IMAGE_INFO_FILE"
