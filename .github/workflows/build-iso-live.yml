@@ -1,5 +1,5 @@
 ---
-name: Build ISOs (Live Anaconda)
+name: Build ISO (Live Anaconda)
 
 on: workflow_dispatch
 
@@ -13,7 +13,7 @@ concurrency:
 
 jobs:
     build:
-        name: Build ISOs
+        name: Build ISO
         runs-on: ${{ matrix.platform == 'amd64' && 'ubuntu-24.04' || 'ubuntu-24.04-arm' }}
         strategy:
             fail-fast: false
@@ -35,8 +35,8 @@ jobs:
               with:
                   remove-codeql: true
 
-            - name: Setup Just
-              uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3
+            # - name: Setup Just
+            #   uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3
 
             # - name: Check Just Syntax
             #   shell: bash
