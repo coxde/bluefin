@@ -36,7 +36,7 @@ The `latest` tag will automatically point to the latest build.
 
 ### ISO
 
-TODO
+Anaconda WebUI Live ISO: https://github.com/coxde/bluefin/actions/workflows/build-iso-live.yml
 
 ## Verification ✅
 
