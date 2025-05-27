@@ -15,7 +15,7 @@ dnf5 -y copr disable bazzite-org/webapp-manager
 
 # Install 3rd party packages
 ### Collision nautilus extension
-curl --retry 3 -Lo /etc/skel/.local/share/nautilus-python/extensions/collision-extension.py https://github.com/GeopJr/Collision/raw/refs/heads/main/nautilus-extension/collision-extension.py
+curl --retry 3 --create-dirs -Lo /etc/skel/.local/share/nautilus-python/extensions/collision-extension.py https://github.com/GeopJr/Collision/raw/refs/heads/main/nautilus-extension/collision-extension.py
 
 # Remove packages
 dnf5 -y remove \
