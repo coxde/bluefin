@@ -6,6 +6,7 @@ com.mattjakeman.ExtensionManager
 com.ranfdev.DistroShelf
 com.spotify.Client
 de.capypara.FieldMonitor
+dev.geopjr.Collision
 io.bassi.Amberol
 io.github.flattool.Ignition
 io.github.flattool.Warehouse
