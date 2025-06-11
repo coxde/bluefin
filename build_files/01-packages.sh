@@ -8,6 +8,10 @@ dnf5 -y install \
     podlet \
     syncthing
 
+# Install packages from terra
+dnf5 -y install --enable-repo="terra" \
+    ghostty
+
 # Install COPR packages
 dnf5 -y copr enable bazzite-org/webapp-manager
 dnf5 -y install webapp-manager
