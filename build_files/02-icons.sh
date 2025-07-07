@@ -15,3 +15,7 @@ files=(
 for file in "${files[@]}"; do
     sed -i "s/\(Inherits=\)/\1Adwaita,/g" "$file"
 done
+
+# Install MoreWaita Icon Theme
+cd /tmp
+git clone https://github.com/somepaulo/MoreWaita.git && cd MoreWaita && ./install.sh
