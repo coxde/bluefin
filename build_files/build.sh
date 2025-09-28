@@ -14,6 +14,7 @@ echo "::endgroup::"
 
 echo "::group:: ===== Manage Configurations ====="
 /ctx/build_files/10-flatpak-librewolf.sh
+/ctx/build_files/11-flatpak-zen.sh
 echo "::endgroup::"
 
 echo "::group:: ===== Include Justfiles ====="
