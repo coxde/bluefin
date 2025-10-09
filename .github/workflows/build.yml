@@ -3,8 +3,11 @@ on:
     push:
         branches:
             - main
+            - "renovate/**"
         paths:
             - "image-versions.yaml"
+            - ".github/workflows/**"
+            - "build_files/**"
     pull_request:
         branches:
             - main
