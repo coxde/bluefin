@@ -1,36 +1,27 @@
 {
-    $schema: 'https://docs.renovatebot.com/renovate-schema.json',
-    extends: [
-        'config:best-practices',
-    ],
-    customManagers: [
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": ["config:best-practices"],
+    "customManagers": [
         {
-            customType: 'regex',
-            managerFilePatterns: [
-                '/image-versions(\\.[^.]+)?\\.(yaml|yml)$/',
+            "customType": "regex",
+            "managerFilePatterns": ["/image-versions(\\.[^.]+)?\\.(yaml|yml)$/"],
+            "matchStrings": [
+                "image:\\s*(?<packageName>\\S+)\\s*tag:\\s*(?<currentValue>\\S+)\\s*digest:\\s*(?<currentDigest>sha256:[a-f0-9]+)",
             ],
-            matchStrings: [
-                'image:\\s*(?<packageName>\\S+)\\s*tag:\\s*(?<currentValue>\\S+)\\s*digest:\\s*(?<currentDigest>sha256:[a-f0-9]+)',
-            ],
-            datasourceTemplate: 'docker',
+            "datasourceTemplate": "docker",
         },
     ],
-    packageRules: [
+    "packageRules": [
         {
-            matchUpdateTypes: [
-                'pin',
-                'pinDigest',
-            ],
-            automerge: true,
+            "matchUpdateTypes": ['minor', 'patch', 'pin', 'pinDigest', 'digest'],
+            "automerge": true,
+            "automergeType": "branch"
         },
         {
-            matchPackageNames: [
-                'ghcr.io/ublue-os/bluefin-dx',
-            ],
-            matchUpdateTypes: [
-                'digest',
-            ],
-            automerge: true,
-        },
-    ],
+            "matchPackageNames": ["ghcr.io/ublue-os/bluefin-dx"],
+            "matchUpdateTypes": ["digest"],
+            "automerge": true,
+            "automergeType": "branch"
+        }
+    ]
 }
