@@ -9,7 +9,6 @@ echo "::endgroup::"
 echo "::group:: ===== Manage Packages ====="
 /ctx/build_files/01-packages.sh
 /ctx/build_files/02-icons.sh
-install -Dm0644 -t /etc/ublue-os/ /ctx/iso_files/*.list # ujust install-system-flatpaks
 echo "::endgroup::"
 
 echo "::group:: ===== Manage Configurations ====="
