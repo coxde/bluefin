@@ -2,4 +2,4 @@ images:
     - name: bluefin
       image: ghcr.io/ublue-os/bluefin-dx
       tag: stable
-      digest: sha256:c493ef8a756838f766191002c2d0f99485fbd184b981ca1cc82869b369c86d4f
+      digest: sha256:1527efbb34402c8c019a6c0dcd404845c0432590b52aaa92e8ce4fc209b17a52
